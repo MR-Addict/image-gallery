@@ -23,6 +23,8 @@ def get_files(path):
 
 
 # 2. Copy src files to public
+if not os.path.exists(src_path):
+    os.mkdir(src_path)
 get_files(src_path)
 if os.path.exists(public_path):
     for dir in os.listdir(public_path):

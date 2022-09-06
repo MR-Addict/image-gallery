@@ -1,7 +1,6 @@
 import os
 import yaml
 import shutil
-import datetime
 
 all_files = {}
 src_path = './src/'

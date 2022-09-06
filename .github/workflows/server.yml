@@ -22,5 +22,3 @@ jobs:
             cd /home/$USER/Projects/ImageServer
             git pull
             python main.py
-            docker-compose down
-            docker-compose up -d

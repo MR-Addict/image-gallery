@@ -93,3 +93,5 @@ for dir in all_files.keys():
     else:
         with open(dir.replace(src_path, public_path)+'index.html', "w") as outfile:
             outfile.write(index)
+
+print("[INFO] Static files generated!")

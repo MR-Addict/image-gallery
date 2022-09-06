@@ -1,0 +1,4 @@
+header_link: '<a href="PATH">NAME</a>/'
+gallery_img: '<div class="gallery-img"><a href="PATH" data-lightbox="mygallery"><img src="PATH" alt="image" /></a><p class="img-title">NAME</p></div>'
+gallery_dir: '<div class="gallery-img"><a href="PATH/"><img src="/images/user.png" alt="image" /></a><p class="img-title">NAME</p></div>'
+gallery_row: '<div class="gallery-row">GALLERY_ROW</div>'

@@ -1,0 +1,10 @@
+version: '3'
+services:
+  image-gallery:
+    image: nginx
+    container_name: image-gallery
+    restart: unless-stopped
+    ports:
+      - 8085:80
+    volumes:
+      - /home/ubuntu/Projects/ImageServer:/usr/share/nginx/html

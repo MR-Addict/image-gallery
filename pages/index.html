@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/images/favicon.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/lightbox.min.css" />
+    <script src="/js/lightbox-plus-jquery.min.js" defer></script>
+    <title>Image Gallery</title>
+  </head>
+  <body>
+    <div class="header"><a href="/">~</a>/<a href="/gallery/">gallery</a>/</div>
+    <div class="gallery">
+      <div class="gallery-row">
+        <div class="gallery-img">
+          <a href="beach-playing-kids.jpg" data-lightbox="mygallery"
+            ><img src="beach-playing-kids.jpg" alt="image"
+          /></a>
+          <p class="img-title">beach-playing-kids.jpg</p>
+        </div>
+        <div class="gallery-img">
+          <a href="bike-riding-puppet.jpg" data-lightbox="mygallery"
+            ><img src="bike-riding-puppet.jpg" alt="image"
+          /></a>
+          <p class="img-title">bike-riding-puppet.jpg</p>
+        </div>
+      </div>
+    </div>
+    <footer></footer>
+  </body>
+  <script>
+    document.querySelector("footer").innerHTML = `&copy; Copyright ${new Date().getFullYear()}校大学生科协`;
+  </script>
+</html>

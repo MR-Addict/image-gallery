@@ -10,8 +10,6 @@
   --pri-white: #ffffff;
   --pri-light-grey: #a0a0a0;
   --pri-grey: #555;
-  --pri-blue: #1c3879;
-  --pri-green: #309e9b;
 }
 
 html {
@@ -94,7 +92,7 @@ body {
 
   border-radius: 1rem;
   background: var(--pri-white);
-  box-shadow: 5px 10px var(--pri-light-grey);
+  box-shadow: 0.5rem 1rem var(--pri-light-grey);
   transition: 0.5s;
 }
 

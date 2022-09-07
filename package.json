@@ -1,0 +1,23 @@
+{
+  "name": "imagegallery",
+  "version": "1.0.0",
+  "description": "<h1>Image Gallery<img src=\"https://github.com/MR-Addict/image-gallery/actions/workflows/server.yml/badge.svg?branch=main\"/></h1>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MR-Addict/image-gallery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MR-Addict/image-gallery/issues"
+  },
+  "homepage": "https://github.com/MR-Addict/image-gallery#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

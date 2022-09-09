@@ -36,13 +36,31 @@ git clone https://github.com/MR-Addict/image-gallery.git
 
 第二步：安装依赖
 
-如果你是使用python3.8+，那么你大概不需要安装什么依赖
+```bash
+pip install -r requirements.txt
+```
 
-第三步：生成文件
+第三步：修改网址：
+
+```python
+all_files = {}
+src_path = './src/'
+page_path = './pages/'
+public_path = './public/'
+site_link = 'https://mr-addict.github.io/image-gallery/'
+```
+
+其余的可以不修改，但是最后一个`site_link`需要修改为你的GitHub网址或者其他网址
+
+第四步：生成文件
 
 将你需要制作成相册的照片放到`src`文件夹下，运行python脚本之后会生成一个`public`文件夹
 
-第四步：搭建web服务器
+```bash
+python main.py
+```
+
+第五步：搭建web服务器
 
 如果你有node可以运行这条命令：
 

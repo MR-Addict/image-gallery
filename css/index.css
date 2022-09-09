@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --pri-bcg: #f0f0f0;
+  --pri-white: #ffffff;
+  --pri-light-grey: #a0a0a0;
+  --pri-grey: #555;
+}
+
+html {
+  font-size: 62.5%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* header style */
+.header {
+  height: 6rem;
+  margin-top: 2rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 3rem;
+  font-weight: bold;
+  gap: 0.5rem;
+}
+
+.header a {
+  color: var(--pri-grey);
+  text-decoration: none;
+  transition: 0.3s;
+  padding: 1rem;
+}
+
+.header a:hover {
+  background: var(--pri-bcg);
+  border-radius: 1rem;
+}
+
+/* body style */
+body {
+  width: fit-content;
+  min-height: 100vh;
+  font-size: 1.6rem;
+  color: var(--pri-grey);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+/* gallery style */
+.gallery {
+  width: fit-content;
+  padding: 3rem;
+  border-radius: 1rem;
+  background: var(--pri-bcg);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+/* gallery row img */
+.gallery-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.gallery-row .gallery-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 1rem;
+  background: var(--pri-white);
+  box-shadow: 0.5rem 1rem var(--pri-light-grey);
+  transition: 0.5s;
+}
+
+.gallery-row .gallery-img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-img img {
+  width: 35rem;
+  height: 25rem;
+  padding: 1rem;
+  object-fit: cover;
+}
+
+.gallery-img p {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* footer */
+footer {
+  margin: 1rem 0;
+}
+
+@media screen and (max-width: 800px) {
+  .gallery-row {
+    flex-direction: column;
+  }
+  .gallery-img img {
+    width: 40rem;
+    height: 30rem;
+  }
+}

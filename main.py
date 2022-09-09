@@ -63,7 +63,7 @@ for dir in all_files.keys():
         if os.path.isfile(dir+file):
             gallery_img += template["gallery_img"].replace(
                 "PATH", file).replace("NAME", file)
-            if img_count % 2 == 1:
+            if img_count % 3 == 2:
                 gallery_row += template["gallery_row"].replace(
                     "GALLERY_ROW", gallery_img)
                 gallery_img = ''
@@ -71,17 +71,17 @@ for dir in all_files.keys():
         elif os.path.isdir(dir+file):
             gallery_img += template["gallery_dir"].replace(
                 "PATH", file).replace("NAME", file)
-            if dir_count % 2 == 1:
+            if dir_count % 3 == 2:
                 gallery_row += template["gallery_row"].replace(
                     "GALLERY_ROW", gallery_img)
                 gallery_img = ''
             dir_count += 1
 
-    if img_count % 2 != 0:
+    if img_count % 3 != 0:
         gallery_row += template["gallery_row"].replace(
             "GALLERY_ROW", gallery_img)
 
-    if dir_count % 2 != 0:
+    if dir_count % 3 != 0:
         gallery_row += template["gallery_row"].replace(
             "GALLERY_ROW", gallery_img)
 

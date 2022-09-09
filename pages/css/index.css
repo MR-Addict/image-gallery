@@ -23,8 +23,8 @@ html {
 
 /* header style */
 .header {
-  width: 100%;
   height: 6rem;
+  margin-top: 2rem;
 
   display: flex;
   flex-direction: row;
@@ -38,7 +38,7 @@ html {
 .header a {
   color: var(--pri-grey);
   text-decoration: none;
-  transition: 0.5rem;
+  transition: 0.3s;
   padding: 1rem;
 }
 
@@ -63,7 +63,7 @@ body {
 
 /* gallery style */
 .gallery {
-  width: 90rem;
+  width: fit-content;
   padding: 3rem;
   border-radius: 1rem;
   background: var(--pri-bcg);
@@ -101,8 +101,8 @@ body {
 }
 
 .gallery-img img {
-  width: 40rem;
-  height: 30rem;
+  width: 35rem;
+  height: 25rem;
   padding: 1rem;
   object-fit: cover;
 }
@@ -116,4 +116,14 @@ body {
 /* footer */
 footer {
   margin: 1rem 0;
+}
+
+@media screen and (max-width: 800px) {
+  .gallery-row {
+    flex-direction: column;
+  }
+  .gallery-img img {
+    width: 40rem;
+    height: 30rem;
+  }
 }

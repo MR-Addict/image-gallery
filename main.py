@@ -6,7 +6,7 @@ all_files = {}
 src_path = './src/'
 page_path = './pages/'
 public_path = './public/'
-site_link = '/'
+site_link = 'https://mr-addict.github.io/image-gallery/'
 
 index_template = ''
 template = yaml.load(open("template/template.yaml"), yaml.Loader)
@@ -62,7 +62,7 @@ for dir in all_files.keys():
     for file in all_files[dir]:
         if os.path.isfile(dir+file):
             gallery_img += template["gallery_img"].replace(
-                "PATH", file).replace("NAME", file)
+                "PATH", site_link + dir.replace(src_path, '') + file).replace("NAME", file)
             if img_count % 3 == 2:
                 gallery_row += template["gallery_row"].replace(
                     "GALLERY_ROW", gallery_img)
@@ -70,7 +70,7 @@ for dir in all_files.keys():
             img_count += 1
         elif os.path.isdir(dir+file):
             gallery_img += template["gallery_dir"].replace(
-                "PATH", file).replace("NAME", file)
+                "PATH", site_link + file).replace("NAME", file).replace('/images/user.png', site_link+'images/user.png')
             if dir_count % 3 == 2:
                 gallery_row += template["gallery_row"].replace(
                     "GALLERY_ROW", gallery_img)
@@ -86,11 +86,13 @@ for dir in all_files.keys():
             "GALLERY_ROW", gallery_img)
 
     index = index_template.replace("HEADER_LINK", header_link).replace(
-        "GALLERY_ROW", gallery_row)
+        "GALLERY_ROW", gallery_row).replace(
+        '/css/', site_link+'css/').replace('/js/', site_link+'js/').replace(
+        '/images/favicon.ico', site_link+'images/favicon.ico')
 
     # 4.4 Write html files
     if len(dir.split('/')) == 3:
-        with open('./public/index.html', "w") as outfile:
+        with open('public/index.html', "w") as outfile:
             outfile.write(index)
     else:
         with open(dir.replace(src_path, public_path)+'index.html', "w") as outfile:

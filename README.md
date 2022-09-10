@@ -26,7 +26,7 @@
 
 - https://github.com/MR-Addict/ghpages-fileserver
 
-## 3. 如何使用
+## 3. 如何部署
 
 第一步，克隆本文档：
 
@@ -65,6 +65,14 @@ python -m http.server 8085 --directory public
 > Demo网址
 > - [https://mr-addict.github.io/image-gallery](https://mr-addict.github.io/image-gallery)
 
-## 4. 结束
+## 4. 如何参与
+
+你也想分享你的优质图片?
+
+熟悉`Pull request`的直接按照Pull request的步骤来就可以了。
+
+PR成功后GitHub Action会自动部署到本项目的Pages上哦。
+
+## 5. 结束
 
 Happy coding!

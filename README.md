@@ -40,19 +40,7 @@ git clone https://github.com/MR-Addict/image-gallery.git
 pip install -r requirements.txt
 ```
 
-第三步：修改网址：
-
-```python
-all_files = {}
-src_path = './src/'
-page_path = './pages/'
-public_path = './public/'
-site_link = 'https://mr-addict.github.io/image-gallery/'
-```
-
-其余的可以不修改，但是最后一个`site_link`需要修改为你的GitHub网址或者其他网址
-
-第四步：生成文件
+第三步：生成文件
 
 将你需要制作成相册的照片放到`src`文件夹下，运行python脚本之后会生成一个`public`文件夹
 
@@ -76,3 +64,7 @@ python -m http.server 8085 --directory public
 
 > Demo网址
 > - [https://mr-addict.github.io/image-gallery](https://mr-addict.github.io/image-gallery)
+
+## 4. 结束
+
+Happy coding!

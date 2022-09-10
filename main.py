@@ -6,7 +6,6 @@ all_files = {}
 src_path = './src/'
 page_path = './pages/'
 public_path = './public/'
-site_link = 'https://mr-addict.github.io/image-gallery/'
 
 index_template = ''
 template = yaml.load(open("template/template.yaml"), yaml.Loader)
@@ -26,6 +25,7 @@ def get_files(path):
 if not os.path.exists(src_path):
     os.mkdir(src_path)
 get_files(src_path)
+# print(all_files)
 if os.path.exists(public_path):
     for dir in os.listdir(public_path):
         file_path = os.getcwd()+'/'+public_path+dir
@@ -41,18 +41,17 @@ shutil.copytree(os.getcwd()+'/'+page_path, os.getcwd() +
                 '/'+public_path, dirs_exist_ok=True)
 
 # 4. Generate html files
-for dir in all_files.keys():
+for dir_index, dir in enumerate(all_files.keys()):
     # 4.1 Table header link
     index = ''
     header_link = ''
     gallery_img = ''
     gallery_row = ''
-    link_path = site_link
 
-    header_link = template["header_link"].replace(
-        "PATH", link_path).replace("NAME", '~')
-    for dir_name in ('~'+dir.replace(src_path, '/')).split('/')[1:-1]:
-        link_path += dir_name+'/'
+    for dir_name_index, dir_name in enumerate(('~'+dir.replace(src_path, '/')).split('/')[0:-1]):
+        link_path = ''
+        for i in range(len(('~'+dir.replace(src_path, '/')).split('/')[0:-1])-dir_name_index-1):
+            link_path += '../'
         header_link += template["header_link"].replace(
             "PATH", link_path).replace("NAME", dir_name)
 
@@ -62,15 +61,17 @@ for dir in all_files.keys():
     for file in all_files[dir]:
         if os.path.isfile(dir+file):
             gallery_img += template["gallery_img"].replace(
-                "PATH", site_link + dir.replace(src_path, '') + file).replace("NAME", file)
+                "PATH", file).replace("NAME", file)
             if img_count % 3 == 2:
                 gallery_row += template["gallery_row"].replace(
                     "GALLERY_ROW", gallery_img)
                 gallery_img = ''
             img_count += 1
         elif os.path.isdir(dir+file):
+            shutil.copy2(os.getcwd()+'/'+page_path +
+                         'images/user.png', os.getcwd()+'/'+dir.replace(src_path, public_path))
             gallery_img += template["gallery_dir"].replace(
-                "PATH", site_link + file).replace("NAME", file).replace('/images/user.png', site_link+'images/user.png')
+                "PATH", file).replace("NAME", file)
             if dir_count % 3 == 2:
                 gallery_row += template["gallery_row"].replace(
                     "GALLERY_ROW", gallery_img)
@@ -85,10 +86,13 @@ for dir in all_files.keys():
         gallery_row += template["gallery_row"].replace(
             "GALLERY_ROW", gallery_img)
 
+    previous_dots = ''
+    for i in range(len((dir.split('/')))-3):
+        previous_dots += '../'
     index = index_template.replace("HEADER_LINK", header_link).replace(
         "GALLERY_ROW", gallery_row).replace(
-        '/css/', site_link+'css/').replace('/js/', site_link+'js/').replace(
-        '/images/favicon.ico', site_link+'images/favicon.ico')
+        'css/', previous_dots+'css/').replace('js/', previous_dots+'js/').replace(
+        'images/favicon.ico', previous_dots+'images/favicon.ico')
 
     # 4.4 Write html files
     if len(dir.split('/')) == 3:

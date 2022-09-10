@@ -2,15 +2,15 @@
 
 ## 1. 预览
 
-文件夹界面：
+文件夹界面
 
 ![Folder](images/gallery-folder.png)
 
-相册界面：
+相册界面
 
 ![Image](images/gallery-image.png)
 
-预览界面：
+预览界面
 
 ![Preview](images/gallery-preview.png)
 
@@ -48,7 +48,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-第五步：搭建web服务器
+第四步：搭建web服务器
 
 如果你有node可以运行这条命令：
 

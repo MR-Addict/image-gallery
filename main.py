@@ -25,7 +25,6 @@ def get_files(path):
 if not os.path.exists(src_path):
     os.mkdir(src_path)
 get_files(src_path)
-# print(all_files)
 if os.path.exists(public_path):
     for dir in os.listdir(public_path):
         file_path = os.getcwd()+'/'+public_path+dir

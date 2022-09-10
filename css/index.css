@@ -119,11 +119,10 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
+  html {
+    font-size: 45%;
+  }
   .gallery-row {
     flex-direction: column;
-  }
-  .gallery-img img {
-    width: 40rem;
-    height: 30rem;
   }
 }

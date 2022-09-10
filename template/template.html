@@ -12,10 +12,11 @@
   <body>
     <div class="header">HEADER_LINK</div>
     <div class="gallery">GALLERY_ROW</div>
-    <footer></footer>
   </body>
   <script src="js/lightbox-plus-jquery.min.js"></script>
   <script>
-    document.querySelector("footer").innerHTML = `&copy; Copyright ${new Date().getFullYear()}校大学生科协`;
+    let footer = document.createElement("footer");
+    footer.innerHTML = `<footer">&copy; Copyright ${new Date().getFullYear()} MR-Addict</footer>`;
+    document.body.appendChild(footer);
   </script>
 </html>

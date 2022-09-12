@@ -1,4 +1,4 @@
-<h1>私人小相册 <img src="https://github.com/MR-Addict/image-gallery/actions/workflows/pages.yml/badge.svg?branch=main"/></h1>
+<h1>私人小相册 <img src="https://github.com/MR-Addict/image-gallery/actions/workflows/pages.yml/badge.svg?branch=main"/> <img src="https://github.com/MR-Addict/image-gallery/actions/workflows/docker.yml/badge.svg?branch=main"/></h1>
 
 ## 1. 说明
 

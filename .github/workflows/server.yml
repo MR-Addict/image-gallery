@@ -20,6 +20,8 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           script_stop: true
           script: |
-            cd /home/$USER/Projects/ImageServer
+            cd /home/$USER/Projects/ImageGallery
             git pull
-            python main.py
+            docker-compose down
+            docker rmi mraddict063/image-gallery
+            docker-compose up -d

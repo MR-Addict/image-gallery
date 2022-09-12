@@ -1,4 +1,4 @@
-FROM ubuntu AS builder
+FROM python:3.9-alpine AS builder
 WORKDIR /usr/src/app
 COPY . .
 RUN pip install -r requirements.txt

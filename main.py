@@ -47,6 +47,10 @@ for dir_index, dir in enumerate(all_files.keys()):
     gallery_img = ''
     gallery_row = ''
 
+    previous_dots = ''
+    for i in range(len((dir.split('/')))-3):
+        previous_dots += '../'
+
     for dir_name_index, dir_name in enumerate(('~'+dir.replace(src_path, '/')).split('/')[0:-1]):
         link_path = ''
         for i in range(len(('~'+dir.replace(src_path, '/')).split('/')[0:-1])-dir_name_index-1):
@@ -67,10 +71,8 @@ for dir_index, dir in enumerate(all_files.keys()):
                 gallery_img = ''
             img_count += 1
         elif os.path.isdir(dir+file):
-            shutil.copy2(os.getcwd()+'/'+page_path +
-                         'images/user.png', os.getcwd()+'/'+dir.replace(src_path, public_path))
             gallery_img += template["gallery_dir"].replace(
-                "PATH", file).replace("NAME", file)
+                "PATH", file).replace("NAME", file).replace('DIR', previous_dots+'images/dir.png')
             if dir_count % 3 == 2:
                 gallery_row += template["gallery_row"].replace(
                     "GALLERY_ROW", gallery_img)
@@ -85,9 +87,6 @@ for dir_index, dir in enumerate(all_files.keys()):
         gallery_row += template["gallery_row"].replace(
             "GALLERY_ROW", gallery_img)
 
-    previous_dots = ''
-    for i in range(len((dir.split('/')))-3):
-        previous_dots += '../'
     index = index_template.replace("HEADER_LINK", header_link).replace(
         "GALLERY_ROW", gallery_row).replace(
         'css/', previous_dots+'css/').replace('js/', previous_dots+'js/').replace(

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/lightbox.min.css" />
+    <title>Image Gallery</title>
+  </head>
+  <body>
+    <div class="header"><a href="../">~</a>/<a href="">考场笔记</a>/</div>
+    <div class="gallery"><div class="gallery-row"><div class="gallery-img"><a href="机械制造基础.png" data-lightbox="mygallery"><img src="机械制造基础.png" alt="image" /></a><p class="img-title">机械制造基础.png</p></div><div class="gallery-img"><a href="材料力学B.png" data-lightbox="mygallery"><img src="材料力学B.png" alt="image" /></a><p class="img-title">材料力学B.png</p></div><div class="gallery-img"><a href="互换性与测量技术.png" data-lightbox="mygallery"><img src="互换性与测量技术.png" alt="image" /></a><p class="img-title">互换性与测量技术.png</p></div></div></div>
+  </body>
+  <script src="../js/lightbox-plus-jquery.min.js"></script>
+  <script>
+    let footer = document.createElement("footer");
+    footer.innerHTML = `<footer">&copy; Copyright ${new Date().getFullYear()} MR-Addict</footer>`;
+    document.body.appendChild(footer);
+  </script>
+</html>

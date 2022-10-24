@@ -1,4 +1,4 @@
 header_link: '<a href="PATH">NAME</a>/'
-gallery_img: '<div class="gallery-img"><a href="PATH" data-lightbox="mygallery"><img src="PATH" loading="lazy" alt="image" /></a><p class="img-title">NAME</p></div>'
-gallery_dir: '<div class="gallery-img"><a href="PATH/"><img src="DIR" loading="lazy" alt="image" /></a><p class="img-title">NAME</p></div>'
+gallery_img: '<div class="gallery-img"><a href="PATH" data-lightbox="mygallery"><img data-src="PATH" class="lazyload" /></a><p class="img-title">NAME</p></div>'
+gallery_dir: '<div class="gallery-img"><a href="PATH/"><img data-src="DIR" class="lazyload" /></a><p class="img-title">NAME</p></div>'
 gallery_row: '<div class="gallery-row">GALLERY_ROW</div>'

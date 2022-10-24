@@ -94,10 +94,10 @@ for dir_index, dir in enumerate(all_files.keys()):
 
     # 4.4 Write html files
     if len(dir.split('/')) == 3:
-        with open('public/index.html', "w") as outfile:
+        with open('public/index.html', "w", encoding="utf-8") as outfile:
             outfile.write(index)
     else:
-        with open(dir.replace(src_path, public_path)+'index.html', "w") as outfile:
+        with open(dir.replace(src_path, public_path)+'index.html', "w", encoding="utf-8") as outfile:
             outfile.write(index)
 
 print("[INFO] Static files generated!")
